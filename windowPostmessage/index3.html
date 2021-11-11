@@ -1,0 +1,7 @@
+<script>
+    function test() {
+        document.getElementById('f').contentWindow.postMessage("BAD", "*");
+    }
+</script>
+<iframe src="http://127.0.0.1:5501/index1.html" frameborder="0" onload="test()" id="f"></iframe>
+SENDER BAD

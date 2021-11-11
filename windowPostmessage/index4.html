@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<script type="text/javascript">
+    var windowObjectReference = null; // 전역 변수
+    
+    function openFFPromotionPopup() {
+      if(windowObjectReference == null || windowObjectReference.closed)
+      /// * 메모리의 창 개체에 대한 포인터가 존재하지 않거나 그러한 포인터가 있지만 창이 닫힌 경우 * /
+    
+      {
+        windowObjectReference = window.open("https://www.w3schools.com",
+       "PromoteFirefoxWindowName", "resizable,scrollbars,status");
+        /// * 그런 다음 만듭니다. 새 창이 생성되고 다른 창 위에 표시됩니다. * /
+      }else
+      {
+        windowObjectReference.focus();
+        /// * 그렇지 않으면 창 참조가 존재해야하며 창이 닫히지 않습니다. 따라서 focus () 메서드를 사용하여 다른 창 위에 다시 가져올 수 있습니다. 창을 다시 만들거나 참조 된 리소스를 다시로드 할 필요가 없습니다. * /
+      };
+    }
+    </script>
+    
+    (...)
+    
+    <p>
+      <a
+      href="https://www.w3schools.com"
+      target="PromoteFirefoxWindowName"
+      onclick="openFFPromotionPopup(); return false;"
+      title="This link will create a new window or will re-use an already opened one"
+      >Promote Firefox adoption</a>
+    </p>
